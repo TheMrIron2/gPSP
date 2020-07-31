@@ -17,14 +17,15 @@ VPATH           += ..
 CFLAGS          += -O3 -DPSP_BUILD -G0 -funsigned-char
 CFLAGS          += ${shell ${PSPDEV}/bin/sdl-config --cflags}
 ASFLAGS         = ${CFLAGS}
-PSP_EBOOT_TITLE = gpSP v0.9 signed
+PSP_FW_VERSION  = 500
+PSP_EBOOT_TITLE = gpSP v0.9
 PSP_EBOOT_ICON  = ICON0.PNG
 PSP_EBOOT_PIC1  = PIC1.PNG
 EXTRA_TARGETS   = EBOOT.PBP
 
 BUILD_PRX       = 1
-ENCRYPT         = 1
 
+#LIBS            = ${shell ${PSPDEV}/bin/sdl-config --libs} -lSDL -lSDL_mixer -lpspgu -lpsprtc -lpspaudio -lz -lpspctrl -lpsppower
 LIBS            += ${shell ${PSPDEV}/bin/sdl-config --libs} -lpsppower \
 		  -lz
 
